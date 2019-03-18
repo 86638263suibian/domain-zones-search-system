@@ -11,6 +11,7 @@ var requestCatalog = function(data) {
 
 
 var onAggregationClick = function(element, aggregation, value) {
+  jQuery(".se-pre-con").fadeIn("slow");
   var checked = jQuery(element).is(':checked');
   var uri = getUpdatedAggregationsUrl({
     key: aggregation,
@@ -21,6 +22,9 @@ var onAggregationClick = function(element, aggregation, value) {
   requestCatalog({
     url: uri.href()
   });
+  jQuery(".se-pre-con").fadeOut("slow");
+ 
+
 }
 
 

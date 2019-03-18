@@ -9,11 +9,11 @@
     "selector": "roundRobin"
   },
   "mongodb": {
-    "uri": "localhost:27017/itemsapi-starter"
+    "uri": "localhost:27017/itemsapi-starter2"
   },
   "auth": {
     "username": "admin",
-    "password": "itemsapi"
+    "password": "itemsapipass"
   },
   "redis": {
     "host": "localhost",

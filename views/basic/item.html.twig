@@ -25,7 +25,7 @@
             <div class="">
               <div class="panel-body text-center">
                 <div class="">
-                  <img src="{% if item.image %}{{ item.image }}{% else %}{{ image }}{% endif %}" alt="{{ item.name }}" style="width: 300px" />
+                  <img src="https://statistics.domain-db.com/assets/images/www.png" alt="{{ item.name }}" style="width: 300px" />
                 </div>
               </div>
             </div>
@@ -37,7 +37,6 @@
 
       <div class="col-sm-8">
         <div class="">
-          <h1>{{ item.name }}</h1>
           <span class="" style="margin-bottom: 0;">
           </span>
 
@@ -46,8 +45,7 @@
               <div class="col-md-12">
                 <table class="table table-striped">
                   <tbody>
-
-                  {% for key, val in item %}
+                   {% for key, val in item %}
                   <tr>
                     <td><b>{{ key }}</b></td>
                     <td>
@@ -57,6 +55,8 @@
                     </td>
                   </tr>
                   {% endfor %}
+
+
                   </tbody>
                 </table>
 
@@ -66,103 +66,6 @@
 
 
                 <hr class="clearfix" />
-
-                <h4>{{ item.name }} - similar items (by tags)</h4>
-
-                <div class="row">
-                {% for element in similar %}
-                  <div class="col-sm-3 col-md-3">
-                    <div class="thumbnail show-info" title="Similar properties" data-content="{{ item[settings.recommendation_field] | intersection(element[settings.recommendation_field]) }}">
-                      <a href="{% if element.permalink %}/item/{{ element.permalink }}{% else %}/id/{{ element.id }}{% endif %}">
-                        <img src="{{ element.image }}" alt="{{ element.name }}">
-                      </a>
-                      <div class="caption">
-                        <p><a href="{% if element.permalink %}/item/{{ element.permalink }}{% else %}/id/{{ element.id }}{% endif %}">{{ element.name }}</a></p>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-                </div>
-
-                <hr class="clearfix" />
-
-
-                {#<div id="disqus_thread"></div>
-                <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = '//test-ku4ymqzum9.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>#}
-
-
-
-                {#<div style="margin-bottom: 20px;">
-                  <h4>{{ item.name }} - comments (2)</h4>
-
-
-                  <div class="media">
-                    <div class="media-left">
-                      <img alt="64x64" class="media-object" data-src="holder.js/64x64" src="/assets/images/user.jpg" data-holder-rendered="true" style="width: 50px;">
-                    </div>
-                    <div class="media-body">
-
-
-                      <form id="addCommentForm" action="/item/{{ id }}/comment" method="POST">
-                        <textarea name="text" class="form-control" rows="2" placeholder="Join the discussion..."></textarea>
-                        <button type="submit" class="btn btn-default pull-right">Add comment!</button>
-                      </form>
-                    </div>
-                  </div>
-
-
-
-                  <div class="media">
-                    <div class="media-left">
-                      <img alt="64x64" class="media-object" src="/assets/images/user.jpg" data-holder-rendered="true" style="width: 50px;">
-                    </div>
-                    <div class="media-body">
-
-                      <strong class="">matt</strong> test test test
-
-                      <br>
-                      <span class="text-muted">
-                        a few seconds ago
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="media">
-                    <div class="media-left">
-                      <img alt="64x64" class="media-object" src="/assets/images/user.jpg" data-holder-rendered="true" style="width: 50px;">
-                    </div>
-                    <div class="media-body">
-
-                      <strong class="">mateusz</strong> test test test
-
-                      <br>
-                      <span class="text-muted">
-                        11 hours ago
-                      </span>
-                    </div>
-                  </div>
-
-                </div>#}
-
-
 
 
             </div>

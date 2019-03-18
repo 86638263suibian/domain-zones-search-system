@@ -106,14 +106,14 @@ module.exports = function(app) {
 
     req.client.search({
       per_page: 6,
-      query_string: '(enabled:true OR _missing_:enabled) AND name:/' + term + '.*/',
+      query_string: '(enabled:true OR _missing_:enabled) AND Domain:/' + term + '.*/',
     })
     .then(function(result) {
       return res.json(_.map(result.data.items, function(val) {
         return {
           //value: val.permalink,
-          value: val.id,
-          label: val.name
+          value: val.permalink,
+          label: val.Domain
         }
       }))
     })
